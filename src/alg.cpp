@@ -14,8 +14,11 @@ return count;
 
 int countPairs2(int *arr, int len, int value) {
   int k, count = 0;
-  while (arr[len - 1] > value) {
+  while (arr[len - 1] > value && len > 0) {
     —len;
+  } 
+  if (!len) {
+    return 0;
   }
   for (int j = len - 1; j >= 0; —j) {
     k = 0;
@@ -31,8 +34,11 @@ return count;
 
 int countPairs3(int *arr, int len, int value) {
   int k, count = 0, left, right, midd;
-  while (arr[len - 1] > value) {
+  while (arr[len - 1] > value && len > 0) {
     —len;
+  } 
+  if (!len) {
+    return 0;
   }
   for (int i = 0; i < len - 1; ++i) {
     k = value - arr[i];
