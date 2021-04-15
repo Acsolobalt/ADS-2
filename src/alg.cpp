@@ -42,22 +42,23 @@ int countPairs3(int *arr, int len, int value) {
     while (midd != left && midd != right) {
       if (k < arr[midd])
         right = midd - 1;
-      else if (k > arr[midd])
-        left = midd + 1;
-      else {
-        ++count;
-        left = 1;
-        right = 1;
-        while(arr[midd - left] == k) {
-          ++left;
+      else 
+        if (k > arr[midd])
+          left = midd + 1;
+        else {
           ++count;
+          left = 1;
+          right = 1;
+          while (arr[midd - left] == k) {
+            ++left;
+            ++count;
+          }
+          while (arr[midd + right] == k) {
+            ++right;
+            ++count;
+          }
+          break;
         }
-        while(arr[midd + right] == k) {
-          ++right;
-          ++count;
-        }
-        break;
-      }
     }
   }
   return count;
