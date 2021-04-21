@@ -58,7 +58,7 @@ while (arr[midd - left] == k) {
 ++left;
 ++count;
 }
-while (arr[midd + right] == k && (midd + right) < i) {
+while ((arr[midd + right] == k) && ((midd + right) < i)) {
 ++right;
 ++count;
 }
