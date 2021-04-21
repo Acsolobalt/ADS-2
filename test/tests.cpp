@@ -41,6 +41,7 @@ TEST(lab2, test2) {
     int count1 = countPairs1(arr, ARRSIZE2, 50);
     int count2 = countPairs2(arr, ARRSIZE2, 50);
     int count3 = countPairs3(arr, ARRSIZE2, 50);
+    std::cout << count1 << " " << count2 << " " << count3 << std::endl;
     EXPECT_TRUE((count1 == count2) && (count1 == count3) && (count2 == count3));
     delete[] arr;
 }
